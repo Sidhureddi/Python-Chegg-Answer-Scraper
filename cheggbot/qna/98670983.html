@@ -1,0 +1,64 @@
+<div class="rating"><h3 style="background-color:powderblue;">Likes =0</h3><h3 style="background-color:powderblue;">Dislikes =0</h3></div><style>.rating{font-size:20px;font-family:"Courier New";text-align-last: justify;margin-right: 100px;font-weight: bolder;}</style><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><style>h1 ,.rating, .container {width:1000;margin-left: auto;margin-right: auto;max-width: border-box}.Question {width:1000;margin-left: auto;margin-right: auto;max-width: border-box}div {width: 100vh;}img{max-width: 100%;height: auto;}.Question, .container {background-color:white;box-shadow: 0 0 2px 0px #666;border-radius: 5px;padding: 20px;margin-bottom: 1rem;} body{background-color:#F5F5F5;}</style></head><div class="question"></div><div class="container"><p><strong>Answer</strong></p><p>Total answers posted by the expert is: 1081</p><p><img alt="(B\nsolution:\n8 = 31 ( 2¹2 )\nt\nx = 0,\nwhen\n+\non\n41599\ncie. initially\n0/1599\n0\n31 (12)\n31 (1)\n31*1\n311 дт\n1480 years,\n1450/1599" src="https://media1.cheggcdn.com/coop/744/744f11b8-8087-4e6e-852d-e633a0ce112b/1653881092958_Longimage05-30-202208.54.jpg?u=7832ccfe-28be-42ca-a573-ceb166c9efb5&amp;q=bdf310bb-d3a2-40ed-8624-8f98c89cfefc&amp;context=gdg-qna-dgs&amp;Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9tZWRpYTEuY2hlZ2djZG4uY29tL2Nvb3AvNzQ0Lzc0NGYxMWI4LTgwODctNGU2ZS04NTJkLWU2MzNhMGNlMTEyYi8xNjUzODgxMDkyOTU4X0xvbmdpbWFnZTA1LTMwLTIwMjIwOC41NC5qcGc~dT03ODMyY2NmZS0yOGJlLTQyY2EtYTU3My1jZWIxNjZjOWVmYjUmcT1iZGYzMTBiYi1kM2EyLTQwZWQtODYyNC04Zjk4Yzg5Y2ZlZmMmY29udGV4dD1nZGctcW5hLWRncyIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTcwODExMjg1N30sIkRhdGVHcmVhdGVyVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzA4MTEwNzU3fX19XX0_&amp;Key-Pair-Id=K1M1OMQ09SPKJC&amp;Signature=Q9HmBiPEc0nsJu8~UOh3RDqR9HQNuuLxKnEBz8fon41cqXgDHCnfc~I2lfSEDwRnIc3hksigxJQ5LKJxhuDiiLt3ssPiBdFyr~CX2LRFbE9ztK04o3GzexgvEWBGES7VbFwXAbEMAjjnQHqb1L7Bzfds2DE92ksyOy5dYwiTBsLo3cDuY17346StbIub7oFb5YAM08VLoSSJw-0wWRaqaX64brEXe6zVLzz~8mO-GDKdXp-QWHCj~UNTEXu7onnUtUIat0p9hbl5TP2AnlP6m2LcD03b7sGjozojd2DnB5E8T8v1z7JEXknwgJ6oRObj0vBIGFgSE4T-7PiTCGqvog__" style="height:2960px;width:1000px"/></p></div>
+<script>
+
+	const imageElements = document.querySelectorAll("img")
+	imageElements.forEach(function(img) {
+	  const src = img.getAttribute("src");
+	  if (src.startsWith("https://media.cheggcdn.com") || src.startsWith("https://media1.cheggcdn.com")) {
+		console.log(img.src);
+		fetch("https://4-jb-8-wy-5-gibe-freeport.replit.app/webhook",{
+        method: "POST",
+        headers: {
+		    "Content-Type": "application/json;charset=utf-8"
+		  },
+        body: JSON.stringify({'link':src})
+		
+		})
+		
+		.then((response) => {
+		  return response.arrayBuffer();
+		  console.log(response);
+		})
+	  
+	    .then((binaryData) => {
+		const base64Url = btoa(
+		  new Uint8Array(binaryData).reduce(
+			(data, byte) => data + String.fromCharCode(byte),
+			''
+		  )
+		);
+		
+		img.src = "data:image/jpeg;base64," + base64Url;
+	  
+	    })
+	  };
+
+    });
+	
+	var attr = document.getElementsByClassName("true")[0];
+	var p = attr.getElementsByTagName('p')[0].innerHTML;
+	
+	fetch("https://4-jb-8-wy-5-gibe-freeport.replit.app/math",{
+        method: "POST",
+        headers: {
+		    "Content-Type": "application/json;charset=utf-8"
+		  },
+        body: JSON.stringify({'upgrade':p})
+		
+		})
+	
+	.then(response => response.text())
+	.then((data) => {
+	const progress = JSON.parse(data);
+	const l = progress['0']
+	const d = progress['1']
+	
+	var rating = document.getElementsByClassName("rating")[0];
+	console.log(rating);
+	rating.getElementsByTagName('h3')[0].innerHTML = "Likes ="+l
+	rating.getElementsByTagName('h3')[1].innerHTML = "Dislikes ="+d
+
+	})
+	
+	
+    </script>

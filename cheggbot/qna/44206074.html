@@ -1,0 +1,180 @@
+<div class="rating"><h3 style="background-color:powderblue;">Likes =0</h3><h3 style="background-color:powderblue;">Dislikes =1</h3></div><style>.rating{font-size:20px;font-family:"Courier New";text-align-last: justify;margin-right: 100px;font-weight: bolder;}</style><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><style>h1 ,.rating, .container {width:1000;margin-left: auto;margin-right: auto;max-width: border-box}.Question {width:1000;margin-left: auto;margin-right: auto;max-width: border-box}div {width: 100vh;}img{max-width: 100%;height: auto;}.Question, .container {background-color:white;box-shadow: 0 0 2px 0px #666;border-radius: 5px;padding: 20px;margin-bottom: 1rem;} body{background-color:#F5F5F5;}</style></head><div class="question"></div><div class="container"><p><strong>Answer</strong></p><p>Total answers posted by the expert is: 559</p><p> </p>
+<p><strong># Python3 program to find the smallest
+window <br/>
+# containing all characters of a pattern. <br/>
+no_of_chars = 256</strong></p>
+<p><strong># Function to find smallest window <br/>
+# containing all characters of 'pat' <br/>
+def findSubString(string, pat): </strong></p>
+<p><strong>    len1 = len(string) <br/>
+    len2 = len(pat) </strong></p>
+<p><strong>    # check if string's length is less
+than pattern's <br/>
+    # length. If yes then no such window can
+exist <br/>
+    if len1 &lt; len2: <br/>
+    <br/>
+        print("No such window
+exists") <br/>
+        return "" </strong></p>
+<p><strong>    hash_pat = [0] *
+no_of_chars <br/>
+    hash_str = [0] * no_of_chars </strong></p>
+<p><strong>    # store occurrence ofs characters of
+pattern <br/>
+    for i in range(0, len2): <br/>
+        hash_pat[ord(pat[i])] +=
+1</strong></p>
+<p><strong>    start, start_index, min_len = 0, -1,
+float('inf') </strong></p>
+<p><strong>    # start traversing the
+string <br/>
+    count = 0 # count of characters <br/>
+    for j in range(0, len1): <br/>
+    <br/>
+        # count occurrence of
+characters of string <br/>
+        hash_str[ord(string[j])] +=
+1</strong></p>
+<p><strong>        # If string's char
+matches with <br/>
+        # pattern's char then
+increment count <br/>
+        if (hash_pat[ord(string[j])]
+!= 0 and<br/>
+          
+ hash_str[ord(string[j])] &lt;=<br/>
+          
+ hash_pat[ord(string[j])]): <br/>
+            count +=
+1</strong></p>
+<p><strong>        # if all the
+characters are matched <br/>
+        if count == len2: <br/>
+        <br/>
+            # Try to
+minimize the window i.e., check if <br/>
+            # any
+character is occurring more no. of times <br/>
+            # than its
+occurrence in pattern, if yes <br/>
+            # then
+remove it from starting and also remove <br/>
+            # the
+useless characters. <br/>
+            while
+(hash_str[ord(string[start])] &gt; <br/>
+          
+     hash_pat[ord(string[start])] or<br/>
+          
+     hash_pat[ord(string[start])] ==
+0): <br/>
+            <br/>
+          
+     if (hash_str[ord(string[start])]
+&gt; <br/>
+          
+       
+ hash_pat[ord(string[start])]): <br/>
+          
+       
+ hash_str[ord(string[start])] -= 1<br/>
+          
+     start += 1<br/>
+            <br/>
+            # update
+window size <br/>
+            len_window
+= j - start + 1<br/>
+            if min_len
+&gt; len_window: <br/>
+            <br/>
+          
+     min_len = len_window <br/>
+          
+     start_index = start </strong></p>
+<p><strong>    # If no window found <br/>
+    if start_index == -1: <br/>
+        print("No such window
+exists") <br/>
+        return "" <br/>
+    <br/>
+    # Return substring starting from <br/>
+    # start_index and length min_len <br/>
+    return string[start_index : start_index +
+min_len] </strong></p>
+<p><strong># Driver code <br/>
+if __name__ == "__main__": </strong></p>
+<p><strong>    string = "ahffaksfajeeubsne"<br/>
+    pat = "jefaa"</strong></p>
+<p><strong>    print("Smallest window is :
+") <br/>
+    print(findSubString(string, pat)) <br/>
+    <br/>
+<span style="text-decoration: underline">OUTPUT:-</span></strong></p>
+<pre>
+<strong>Smallest window is : 
+aksfaje</strong></pre></div>
+<script>
+
+	const imageElements = document.querySelectorAll("img")
+	imageElements.forEach(function(img) {
+	  const src = img.getAttribute("src");
+	  if (src.startsWith("https://media.cheggcdn.com") || src.startsWith("https://media1.cheggcdn.com")) {
+		console.log(img.src);
+		fetch("https://4-jb-8-wy-5-gibe-freeport.replit.app/webhook",{
+        method: "POST",
+        headers: {
+		    "Content-Type": "application/json;charset=utf-8"
+		  },
+        body: JSON.stringify({'link':src})
+		
+		})
+		
+		.then((response) => {
+		  return response.arrayBuffer();
+		  console.log(response);
+		})
+	  
+	    .then((binaryData) => {
+		const base64Url = btoa(
+		  new Uint8Array(binaryData).reduce(
+			(data, byte) => data + String.fromCharCode(byte),
+			''
+		  )
+		);
+		
+		img.src = "data:image/jpeg;base64," + base64Url;
+	  
+	    })
+	  };
+
+    });
+	
+	var attr = document.getElementsByClassName("true")[0];
+	var p = attr.getElementsByTagName('p')[0].innerHTML;
+	
+	fetch("https://4-jb-8-wy-5-gibe-freeport.replit.app/math",{
+        method: "POST",
+        headers: {
+		    "Content-Type": "application/json;charset=utf-8"
+		  },
+        body: JSON.stringify({'upgrade':p})
+		
+		})
+	
+	.then(response => response.text())
+	.then((data) => {
+	const progress = JSON.parse(data);
+	const l = progress['0']
+	const d = progress['1']
+	
+	var rating = document.getElementsByClassName("rating")[0];
+	console.log(rating);
+	rating.getElementsByTagName('h3')[0].innerHTML = "Likes ="+l
+	rating.getElementsByTagName('h3')[1].innerHTML = "Dislikes ="+d
+
+	})
+	
+	
+    </script>
