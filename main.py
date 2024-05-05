@@ -16,11 +16,11 @@ from urllib.parse import urlparse, parse_qs
 import boto3, secrets
 
 # Replace 'YOUR_TOKEN' with the token you received from BotFather
-TOKEN = 'YOUR_TOKEN'
+TOKEN = '6970521351:AAGDVQF-S-hn_Kw5psMOg7ATIgNwEPZ8Uk4'
 bot = telebot.TeleBot(TOKEN)
 
 # ADMIN ID
-sudos = [2110818173]
+sudos = [5511507580]
 
 # Configure logging to save errors to a file
 logging.basicConfig(filename='error.log', level=logging.ERROR)
