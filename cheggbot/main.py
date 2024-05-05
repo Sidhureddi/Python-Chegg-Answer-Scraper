@@ -22,7 +22,7 @@ import numpy as np
 from api_utils import *
 
 os.system("powershell -command $host.ui.RawUI.WindowTitle = 'Cheggbot'")
-TOKEN = ''
+TOKEN = '6970521351:AAGDVQF-S-hn_Kw5psMOg7ATIgNwEPZ8Uk4'
 bot = telebot.TeleBot(TOKEN)
 print(os.getcwd())
 
@@ -61,7 +61,7 @@ for i in get_user_data:
   print(data1)
 
 
-adminID = 2110818173
+adminID = 5511507580
 def save_link(link, Id, chances):
   mydict = {'link': link, 'chat_id': Id, 'chances': chances}
   x = linkcollection.insert_one(mydict)
